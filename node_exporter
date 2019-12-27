@@ -8,7 +8,7 @@
 # Description:
 ### END INIT INFO
  
-SCRIPT=/opt/node_exporter/node_exporter.sh
+SCRIPT=/usr/sbin/node_exporter.sh
 RUNAS=root
  
 PIDFILE=/var/run/node_exporter.pid
