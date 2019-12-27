@@ -1,0 +1,33 @@
+mappings:
+- match: "cache_tstv.*.requests"
+  help: "Total number of http requests"
+  name: "cache_tstv_requests"
+  labels:
+    service: "cache_tstv"
+    location: "HCM"
+    host: "$1"
+
+- match: "cache_tstv.*.status.*"
+  help: "Total number status requests"
+  name: "cache_tstv_status"
+  labels:
+    service: "cache_tstv"
+    location: "HCM"
+    host: "$1"
+    status_code: "$2"
+
+- match: "cache_tstv.*.cache.*"
+  help: "Total number cache requests"
+  name: "cache_tstv_cache"
+  labels:
+    service: "cache_tstv"
+    location: "HCM"
+    host: "$1"
+    status_code: "$2"
+
+- match: "cache_tstv.*.index_response_time"
+  name: "cache_tstv_index_response_time"
+  labels:
+    server: "cache_tstv"
+    location: "HCM"
+    host: "$1"
