@@ -3,7 +3,7 @@ Description=Node Exporter Prometheus
 
 [Service]
 User=root
-ExecStart=/usr/sbin/node-exporter \
+ExecStart=/usr/sbin/node_exporter \
           --collector.tcpstat \
           --collector.systemd \
           --collector.mountstats \
