@@ -1,0 +1,20 @@
+[Unit]
+Description=Node Exporter Prometheus
+
+[Service]
+User=root
+ExecStart=/usr/sbin/node-exporter \
+          --collector.tcpstat \
+          --collector.systemd \
+          --collector.mountstats \
+          --collector.buddyinfo \
+          --collector.interrupts \
+          --collector.ksmd \
+          --collector.logind \
+          --collector.processes \
+          --collector.meminfo_numa \
+          --collector.ntp \
+          --collector.supervisord
+
+[Install]
+WantedBy=multi-user.target
