@@ -1,0 +1,33 @@
+mappings:
+- match: "*.fbox.requests"
+  help: "Total number of http requests"
+  name: "cache_vod_requests"
+  labels:
+    service: "cache_vod"
+    location: "HCM"
+    host: "$1"
+
+- match: "*.fbox.status.*"
+  help: "Total number status requests"
+  name: "cache_vod_status"
+  labels:
+    service: "cache_vod"
+    location: "HCM"
+    host: "$1"
+    status_code: "$2"
+
+- match: "*.fbox.cache.*"
+  help: "Total number cache requests"
+  name: "cache_vod_cache"
+  labels:
+    service: "cache_vod"
+    location: "HCM"
+    host: "$1"
+    status_code: "$2"
+
+- match: "*.fbox.index_response_time"
+  name: "cache_vod_index_response_time"
+  labels:
+    server: "cache_vod"
+    location: "HCM"
+    host: "$1"
