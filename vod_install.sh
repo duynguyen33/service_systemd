@@ -23,4 +23,4 @@ systemctl daemon-reload
 systemctl enable node-exporter
 systemctl enable statsd-exporter
 systemctl start node-exporter
-#systemctl start statsd-exporter
+systemctl start statsd-exporter
