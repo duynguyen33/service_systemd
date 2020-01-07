@@ -16,6 +16,8 @@ cp ./statsd-exporter.service /usr/lib/systemd/system
 cp ./statsd_vod.yml /etc/nginx
 ##Rename file config
 sed -i 's/statsd.yml/statsd_vod.yml/g' /usr/lib/systemd/system/statsd-exporter.service
+##Rename location
+sed -i 's/HCM/DN/g' /etc/nginx/statsd_vod.yml
 
 systemctl daemon-reload
 systemctl enable node-exporter
