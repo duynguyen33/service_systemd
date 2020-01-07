@@ -10,10 +10,8 @@ ExecStart=/usr/sbin/node_exporter \
           --collector.buddyinfo \
           --collector.interrupts \
           --collector.ksmd \
-          --collector.logind \
           --collector.processes \
           --collector.meminfo_numa \
-          --collector.ntp \
           --collector.supervisord
 
 [Install]
