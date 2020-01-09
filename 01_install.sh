@@ -6,6 +6,7 @@ tar xzf statsd_exporter-0.13.0.linux-amd64.tar.gz
 tar xzf node_exporter-0.18.1.linux-amd64.tar.gz
 cp statsd_exporter-0.13.0.linux-amd64/statsd_exporter /usr/sbin
 cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/sbin
+chmod a+x ./nginx-prometheus-exporter
 cp ./nginx-prometheus-exporter /usr/sbin
 mkdir /opt/monitor-prometheus
 mv statsd_exporter-0.13.0.linux-amd64.tar.gz node_exporter-0.18.1.linux-amd64.tar.gz /opt/monitor-prometheus
@@ -17,6 +18,7 @@ cp ./statsd-exporter.service /usr/lib/systemd/system
 cp ./nginx-exporter.service /usr/lib/systemd/system
 cp ./statsd_image.yml /etc/nginx
 
+sed -i 's/statsd.yml/statsd_image.yml/g' /usr/lib/systemd/system/statsd-exporter.service
 ##Rename location
 #sed -i 's/HCM/HN/g' /etc/nginx/statsd_vod.yml
 
