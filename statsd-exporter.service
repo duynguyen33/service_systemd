@@ -3,10 +3,13 @@ Description=Statsd Exporter Prometheus
 
 [Service]
 User=root
+WorkingDirectory=/usr/sbin
 ExecStart=/usr/sbin/statsd_exporter \
    --statsd.listen-udp=127.0.0.1:8125 \
    --statsd.listen-tcp=127.0.0.1:8125 \
    --statsd.mapping-config=/etc/nginx/statsd.yml
+Restart=always # or always, on-abort, etc
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
