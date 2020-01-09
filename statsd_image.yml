@@ -1,0 +1,38 @@
+mappings:
+    - match: "*.*.requests"
+      help: "Total number of http requests"
+      name: "cache_image_http_request_total"
+      labels:
+        service: "cache_image"
+        location: "HN"
+        host: "$1"
+        type: "$2"
+    
+    - match: "*.*.status.*"
+      help: "Total number status requests"
+      name: "cache_image_status_code_total"
+      labels:
+        service: "cache_image"
+        location: "HN"
+        host: "$1"
+        type: "$2"
+        status_code: "$3"
+    
+    - match: "*.*.cache.*"
+      help: "Total number cache requests"
+      name: "cache_image_cache_request_total"
+      labels:
+        service: "cache_image"
+        location: "HN"
+        host: "$1"
+        type: "$2"
+        status_code: "$3"
+    
+    - match: "*.*.index_response_time"
+      name: "cache_image_index_response_time"
+      labels:
+        server: "cache_image"
+        location: "HN"
+        host: "$1"
+        type: "$2"
+    
