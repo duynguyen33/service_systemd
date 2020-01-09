@@ -13,19 +13,19 @@ mv statsd_exporter-0.13.0.linux-amd64.tar.gz node_exporter-0.18.1.linux-amd64.ta
 rm -rf node_exporter-0.18.1.linux-*
 rm -rf statsd_exporter-0.13.0.linux-*
 ##Copy file
-cp ./node-exporter.service /usr/lib/systemd/system
-cp ./statsd-exporter.service /usr/lib/systemd/system
-cp ./nginx-exporter.service /usr/lib/systemd/system
+# cp ./node-exporter.service /usr/lib/systemd/system
+# cp ./statsd-exporter.service /usr/lib/systemd/system
+# cp ./nginx-exporter.service /usr/lib/systemd/system
 cp ./statsd_image.yml /etc/nginx
 
 sed -i 's/statsd.yml/statsd_image.yml/g' /usr/lib/systemd/system/statsd-exporter.service
 ##Rename location
 #sed -i 's/HCM/HN/g' /etc/nginx/statsd_vod.yml
 
-systemctl daemon-reload
-systemctl enable node-exporter
-systemctl enable statsd-exporter
-systemctl enable nginx-exporter
-systemctl start node-exporter
-systemctl start nginx-exporter
-systemctl start statsd-exporter
+# systemctl daemon-reload
+# systemctl enable node-exporter
+# systemctl enable statsd-exporter
+# systemctl enable nginx-exporter
+# systemctl start node-exporter
+# systemctl start nginx-exporter
+# systemctl start statsd-exporter
