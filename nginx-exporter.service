@@ -1,1 +1,13 @@
+[Unit]
+Description=Nginx Status Exporter Prometheus
 
+[Service]
+User=root
+WorkingDirectory=/usr/sbin
+ExecStart=/usr/sbin/nginx-prometheus-exporter \
+           -nginx.scrape-uri http://localhost/status
+Restart=always # or always, on-abort, etc
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
