@@ -1,6 +1,6 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides: node_exporter
+# Provides: node-exporter
 # Required-Start: $local_fs $network $named $time $syslog
 # Required-Stop: $local_fs $network $named $time $syslog
 # Default-Start: 2 3 4 5
@@ -8,11 +8,11 @@
 # Description:
 ### END INIT INFO
  
-SCRIPT=/usr/sbin/node_exporter.sh
+SCRIPT=/usr/sbin/node-exporter.sh
 RUNAS=root
  
-PIDFILE=/var/run/node_exporter.pid
-LOGFILE=/var/log/node_exporter.log
+PIDFILE=/var/run/node-exporter.pid
+LOGFILE=/var/log/node-exporter.log
  
 start() {
 if [ -f "$PIDFILE" ] && kill -0 $(cat "$PIDFILE"); then
