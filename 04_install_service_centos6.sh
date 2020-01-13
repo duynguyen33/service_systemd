@@ -7,6 +7,8 @@ mkdir /opt/monitor-prometheus
 cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/sbin
 cp statsd_exporter-0.13.0.linux-amd64/statsd_exporter /usr/sbin
 cp nginx-prometheus-exporter /usr/sbin
+chmod +x /usr/sbin/nginx-prometheus-exporter
+####
 cp node-exporter.sh /usr/sbin
 cp statsd-exporter.sh /usr/sbin
 cp nginx-exporter.sh /usr/sbin
