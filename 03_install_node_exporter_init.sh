@@ -1,5 +1,5 @@
 #!/bin/bash
-#wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
 tar xzf node_exporter-0.18.1.linux-amd64.tar.gz
 mkdir /opt/monitor-prometheus
 cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/sbin
