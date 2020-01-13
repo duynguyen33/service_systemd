@@ -3,13 +3,13 @@
 tar xzf node_exporter-0.18.1.linux-amd64.tar.gz
 mkdir /opt/monitor-prometheus
 cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/sbin
-cp node_exporter.sh /usr/sbin 
-cp node_exporter.sh /opt/monitor-prometheus
-cp node_exporter /etc/init.d/
+cp node-exporter.sh /usr/sbin 
+cp node-exporter.sh /opt/monitor-prometheus
+cp node-exporter /etc/init.d/
 mv node_exporter-0.18.1.linux-amd64.tar.gz /opt/monitor-prometheus
-chmod +x /usr/sbin/node_exporter.sh
-chmod +x /opt/monitor-prometheus/node_exporter.sh
+chmod +x /usr/sbin/node-exporter.sh
+chmod +x /opt/monitor-prometheus/node-exporter.sh
 chmod +x /etc/init.d/node_exporter
-chkconfig --add node_exporter
+chkconfig --add node-exporter
 rm -rf node_exporter-0.18.1.linux-*
-service node_exporter start
+service node-exporter start
