@@ -18,6 +18,7 @@ cp statsd-exporter /etc/init.d/
 cp nginx-exporter /etc/init.d/
 mv node_exporter-0.18.1.linux-amd64.tar.gz /opt/monitor-prometheus
 mv statsd_exporter-0.13.0.linux-amd64.tar.gz /opt/monitor-prometheus
+cp ./statsd.yml /etc/nginx
 chmod +x /usr/sbin/node-exporter.sh
 chmod +x /usr/sbin/statsd-exporter.sh
 chmod +x /usr/sbin/nginx-exporter.sh
