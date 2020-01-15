@@ -23,7 +23,7 @@
 PROGNAME=nginx-prometheus-exporter
 PROG=/usr/sbin/$PROGNAME
 USER=root
-LOGFILE=/var/log/nginx-exporter.log
+LOGFILE=/var/log/PROGNAME=nginx-prometheus-exporter.log
 LOCKFILE=/var/run/$PROGNAME.pid
 start() {
     echo -n "Starting $PROGNAME: "
