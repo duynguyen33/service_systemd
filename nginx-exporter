@@ -4,7 +4,7 @@
 #
 # chkconfig: 345 70 30
 # description: Prometheus nginx exporter
-# processname: nginx-exporter
+# processname: nginx-prometheus-exporter
 ### BEGIN INIT INFO
 # Provides:
 # Required-Start:

@@ -23,7 +23,7 @@
 PROGNAME=node_exporter
 PROG=/usr/sbin/$PROGNAME
 USER=root
-LOGFILE=/var/log/node_exporter.log
+LOGFILE=/var/log/$PROGNAME.log
 LOCKFILE=/var/run/$PROGNAME.pid
 start() {
     echo -n "Starting $PROGNAME: "
