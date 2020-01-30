@@ -7,8 +7,8 @@
 # processname: nginx-prometheus-exporter
 ### BEGIN INIT INFO
 # Provides:
-# Required-Start:
-# Required-Stop:
+# Required-Start: $nginx $network
+# Required-Stop: $nginx $network
 # Default-Start: 3 4 5
 # Default-Stop: 0 1 2 6
 ### END INIT INFO
