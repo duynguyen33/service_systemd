@@ -1,5 +1,7 @@
 [Unit]
 Description=Node Exporter Prometheus
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 User=root
@@ -12,8 +14,13 @@ ExecStart=/usr/sbin/node_exporter \
 #          --collector.interrupts \
 #          --collector.ksmd \
           --collector.processes \
-          --collector.meminfo_numa 
+          --collector.meminfo_numa
 #          --collector.supervisord
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=10s
+SendSIGKILL=no
+SyslogIdentifier=prometheus_node_exporter
+Restart=always
 Restart=always # or always, on-abort, etc
 RestartSec=3
 

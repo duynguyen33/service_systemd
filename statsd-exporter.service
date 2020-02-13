@@ -1,5 +1,7 @@
 [Unit]
 Description=Statsd Exporter Prometheus
+Wants=network-online.target
+After=nginx.service
 
 [Service]
 User=root
@@ -8,6 +10,10 @@ ExecStart=/usr/sbin/statsd_exporter \
    --statsd.listen-udp=127.0.0.1:8125 \
    --statsd.listen-tcp=127.0.0.1:8125 \
    --statsd.mapping-config=/etc/nginx/statsd.yml
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=10s
+SendSIGKILL=no
+SyslogIdentifier=prometheus_statsd_exporter
 Restart=always # or always, on-abort, etc
 RestartSec=3
 
