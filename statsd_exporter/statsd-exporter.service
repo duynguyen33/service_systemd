@@ -14,7 +14,7 @@ ExecReload=/bin/kill -HUP $MAINPID
 TimeoutStopSec=10s
 SendSIGKILL=no
 SyslogIdentifier=prometheus_statsd_exporter
-Restart=always # or always, on-abort, etc
+Restart=always
 RestartSec=3
 
 [Install]
