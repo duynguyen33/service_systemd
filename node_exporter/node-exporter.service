@@ -7,15 +7,9 @@ After=network-online.target
 User=root
 WorkingDirectory=/usr/sbin
 ExecStart=/usr/sbin/node_exporter \
-#          --collector.tcpstat \
-#          --collector.systemd \
           --collector.mountstats \
-          --collector.buddyinfo \
-#          --collector.interrupts \
-          --collector.ksmd \
-#          --collector.processes \
           --collector.meminfo_numa
-#          --collector.supervisord
+
 ExecReload=/bin/kill -HUP $MAINPID
 TimeoutStopSec=10s
 SendSIGKILL=no

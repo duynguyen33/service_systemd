@@ -27,7 +27,7 @@ LOGFILE=/var/log/$PROGNAME.log
 LOCKFILE=/var/run/$PROGNAME.pid
 start() {
     echo -n "Starting $PROGNAME: "
-    daemon --user $USER --pidfile="$LOCKFILE" "$PROG --collector.tcpstat --collector.mountstats --collector.buddyinfo --collector.interrupts --collector.ksmd --collector.processes --collector.meminfo_numa &>$LOGFILE &"
+    daemon --user $USER --pidfile="$LOCKFILE" "$PROG --collector.mountstats --collector.meminfo_numa &>$LOGFILE &"
     echo $(pidofproc $PROGNAME) >$LOCKFILE
     echo
 }
