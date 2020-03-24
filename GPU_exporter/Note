@@ -1,0 +1,15 @@
+### Download source https://github.com/NVIDIA/gpu-monitoring-tools
+git clone https://github.com/NVIDIA/gpu-monitoring-tools.git
+
+### Build file binary
+cd gpu-monitoring-tools/exporters/prometheus-dcgm/bare-metal
+make install
+
+### Download datacenter-gpu-manager-fabricmanager-1.7.2-1.x86_64.rpm
+rpm -ivh datacenter-gpu-manager-fabricmanager-1.7.2-1.x86_64.rpm
+
+### Run exporter
+prometheus-dcgm -e localhost
+
+### Add metrics GPU to node-exporter
+node_export --collector.textfile.directory=/run/prometheus

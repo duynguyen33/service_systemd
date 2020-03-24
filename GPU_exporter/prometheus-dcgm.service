@@ -1,0 +1,13 @@
+[Unit]
+Description=Prometheus DCGM exporter
+Wants=dcgm.service
+After=dcgm.service
+
+[Service]
+User=root
+Type=simple
+Restart=always
+ExecStart=/usr/local/bin/dcgm-exporter -e
+
+[Install]
+WantedBy=multi-user.target

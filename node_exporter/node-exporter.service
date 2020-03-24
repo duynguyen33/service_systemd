@@ -5,8 +5,8 @@ After=network-online.target
 
 [Service]
 User=root
-WorkingDirectory=/usr/sbin
-ExecStart=/usr/sbin/node_exporter \
+WorkingDirectory=/sbin
+ExecStart=/sbin/node_exporter \
           --collector.mountstats \
           --collector.meminfo_numa
 
