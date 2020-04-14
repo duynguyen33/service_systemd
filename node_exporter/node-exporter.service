@@ -8,7 +8,9 @@ User=root
 WorkingDirectory=/sbin
 ExecStart=/sbin/node_exporter \
           --collector.mountstats \
-          --collector.meminfo_numa
+          --no-collector.hwmon --no-collector.pressure --no-collector.thermal_zone --no-collector.rapl --no-collector.infiniband \
+          --no-collector.edac --no-collector.arp --no-collector.entropy --no-collector.ipvs --no-collector.schedstat --no-collector.softnet \
+          --no-collector.filefd --collector.filesystem.ignored-mount-points=^/mnt(vcas|mfs)
 
 ExecReload=/bin/kill -HUP $MAINPID
 TimeoutStopSec=10s
