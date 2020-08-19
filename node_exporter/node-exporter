@@ -23,11 +23,10 @@
 PROGNAME=node_exporter
 PROG=/usr/sbin/$PROGNAME
 USER=root
-LOGFILE=/var/log/$PROGNAME.log
 LOCKFILE=/var/run/$PROGNAME.pid
 start() {
     echo -n "Starting $PROGNAME: "
-    daemon --user $USER --pidfile="$LOCKFILE" "$PROG --collector.mountstats --collector.meminfo_numa &>$LOGFILE &"
+    daemon --user $USER --pidfile="$LOCKFILE" "$PROG --collector.mountstats --no-collector.hwmon --no-collector.pressure --no-collector.timex --no-collector.vmstat --no-collector.zfs --no-collector.infiniband --no-collector.edac --no-collector.arp --no-collector.entropy --no-collector.ipvs --no-collector.filefd --collector.filesystem.ignored-fs-types=tmpfs --collector.filesystem.ignored-mount-points='^/(mnt/vcas|mnt/mfs)' &"
     echo $(pidofproc $PROGNAME) >$LOCKFILE
     echo
 }
